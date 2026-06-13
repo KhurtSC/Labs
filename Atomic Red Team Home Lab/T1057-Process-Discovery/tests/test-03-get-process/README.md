@@ -141,8 +141,7 @@ Invoke-AtomicTest T1057 -TestNumbers 3 -Cleanup
 ---
 
 ## 8. Takeaways
-In normal environments, a process spawning another instance of itself is uncommon and worth investigating. Seeing powershell.exe as both the Image and ParentImage is a behavioral anomaly, legitimate admin scripts typically run Get-Process inline within the same session, not by launching a child PowerShell process.
+PowerShell spawning another PowerShell is the part that stood out to me most. In a normal environment, that is not really something admins do on purpose, if you wanted to run `Get-Process`, you just run it in your current session, not open a whole new PowerShell just to do it. So seeing Image and ParentImage be the exact same binary is already a little weird on its own. The `AppData\Local\Temp directory` adds to that, legit scripts usually live somewhere structured like `C:\Scripts` or get run straight from System32, not from a temp folder buried in a user profile, which is exactly the kind of behavior Atomic Red Team does.
 
-The CurrentDirectory being AppData\Local\Temp is also a red flag. Legitimate PowerShell scripts are usually executed from structured directories like `C:\Scripts` or `C:\Windows\System32`, not a temp folder.
 
-Additionally, `Get-Process` alone is a weak detection signal in production since it's too common. The real detection value here comes from the combination: same binary spawning itself, running from a temp directory, at High integrity level. No single indicator is enough; context is everything.
+On its own, Get-Process doesn't mean much, it's one of the most common cmdlets out there, so alerting on that alone would be way too noisy in a real environment. But when you stack it together, same binary spawning itself, running from Temp, at High integrity, that combination is what actually makes it worth a second look. None of these things alone would get my attention, but together they tell a more suspicious story because of the sequence
