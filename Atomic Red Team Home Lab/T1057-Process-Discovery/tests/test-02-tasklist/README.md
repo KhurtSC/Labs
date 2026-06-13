@@ -18,6 +18,11 @@ before deciding their next move (such as weaponizing). Knowing what is
 running helps them avoid detection tools and identify high-value targets
 like lsass.exe for credential dumping.
 
+
+![image.png](desc.png)
+
+*(revealed this after the analysis was done)*
+
 ---
 
 ## 2. Hypothesis
