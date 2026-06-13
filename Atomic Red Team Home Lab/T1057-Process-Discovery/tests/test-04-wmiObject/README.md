@@ -144,7 +144,7 @@ Invoke-AtomicTest T1057 -TestNumbers 4 -Cleanup
 
 ---
 
-## 8. Analyst Notes
+## 8. Takeaways
 
 This one kind of corrected a wrong assumption I had. I thought "wmi" in the cmdlet name meant `wmic.exe` would be involve somewhere, turns out no, PowerShell cmdlets that "talk wmi" don't need the wmic binary at all, its just PowerShell calling into WMI directly. Good thing I wrote my hypothesis down before running it, if not, I wouldn't have notice I was wrong about that.
 
