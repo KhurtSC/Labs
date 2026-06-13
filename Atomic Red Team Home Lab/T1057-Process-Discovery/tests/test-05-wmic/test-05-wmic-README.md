@@ -84,7 +84,7 @@ Log detail:
 
 ## 5. Findings and Expectations
 
-As hypothesized, `WMIC.exe` was spawned by `cmd.exe`, which itself was spawned by `powershell.exe` — the full three-link chain matched expectations. `CommandLine` confirmed `wmic process get /format:list`. As seen in Test 3, `CurrentDirectory` was again `AppData\Local\Temp`, reinforcing this as a recurring behavioral indicator across Atomic Red Team executions rather than a one-off.
+As hypothesized, `WMIC.exe` was spawned by `cmd.exe`, which itself was spawned by `powershell.exe`, the full three-link chain matched expectations. `CommandLine` confirmed `wmic process get /format:list`. As seen in Test 3, `CurrentDirectory` was again `AppData\Local\Temp`, reinforcing this as a recurring behavioral indicator across Atomic Red Team executions rather than a one-off.
 
 ---
 
