@@ -17,6 +17,8 @@ This test uses the `Get-WmiObject` PowerShell cmdlet to query `Win32_Process` an
 
 ![image.png](image.png)
 
+*(revealed this after the analysis was done)*
+
 ---
 
 ## 2. Hypothesis
