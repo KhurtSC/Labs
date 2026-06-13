@@ -13,6 +13,10 @@
 
 This test demonstrates process discovery via PowerShell's `Get-Process` cmdlet. Atomic Red Team executes it by spawning a child PowerShell process from a parent PowerShell session, resulting in a PowerShell-spawns-PowerShell pattern visible in Sysmon logs.
 
+![image.png](desc.png)
+
+*(revealed this after the analysis was done)*
+
 ---
 
 ## 2. Hypothesis
