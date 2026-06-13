@@ -151,4 +151,4 @@ Invoke-AtomicTest T1057 -TestNumbers 2 -Cleanup
 
 ## 8. Takeways
 
-Though the first test is a little uneventful, this marks my first own lab on using Splunk. I was able to apply what I learned on the courses I took such as navigating the splunk, configuring the query for better results and making an alert. Excited what is more to come.
+Though the first test is a little uneventful, this marks my first own lab on using Splunk. I was able to apply what I learned on the courses I took such as navigating the splunk, configuring the query for better results and making an alert. Excited for what is more to come.
