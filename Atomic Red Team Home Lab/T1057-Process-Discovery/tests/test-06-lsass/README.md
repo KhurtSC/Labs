@@ -170,7 +170,7 @@ Invoke-AtomicTest T1057 -TestNumbers 6 -Cleanup
 
 ---
 
-## 8. Analyst Notes
+## 8. Takeaway
 
 This is the first test where I marked severity as **High** instead of Low/Medium, and honestly it makes sense - the other tests are "is someone looking around" but this one is "someone is specifically looking for lsass," which is a pretty clear step toward credential dumping (T1003). Same `tasklist` binary as Test 2, but the target is what changes the risk level, not the tool. That's something I didn't really get until seeing it side by side - detection isn't just "what ran" but **what was it looking for.**
 
