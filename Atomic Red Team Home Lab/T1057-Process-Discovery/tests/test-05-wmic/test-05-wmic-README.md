@@ -15,6 +15,11 @@
 
 This test demonstrates process discovery using the legacy `wmic` command-line utility. Unlike Test 3 (`Get-Process`), which stayed entirely within PowerShell, this test spawns `cmd.exe` as an intermediate process, which then launches `WMIC.exe` to enumerate running processes. `wmic` is a Living-off-the-Land Binary (LOLBin) - a legitimate Windows tool that attackers commonly abuse since it's signed by Microsoft and often whitelisted.
 
+![image.png](desc.png)
+
+*(revealed this after the analysis was done)*
+
+
 ---
 
 ## 2. Hypothesis
