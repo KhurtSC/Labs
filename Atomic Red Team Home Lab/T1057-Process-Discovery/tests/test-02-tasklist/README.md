@@ -149,8 +149,6 @@ Alert Triggered:
 Invoke-AtomicTest T1057 -TestNumbers 2 -Cleanup
 ```
 
-**Next curiosity:** MITRE notes that process discovery can also use
-native API calls like `CreateToolhelp32Snapshot` instead of command line
-tools. This is stealthier because it leaves no cmd.exe or tasklist.exe
-process creation event. Want to explore what that looks like in Splunk
-and whether Sysmon can still catch it.
+## 8. Takeways
+
+Though the first test is a little uneventful, this marks my first own lab on using Splunk. I was able to apply what I learned on the courses I took such as navigating the splunk, configuring the query for better results and making an alert. Excited what is more to come.
