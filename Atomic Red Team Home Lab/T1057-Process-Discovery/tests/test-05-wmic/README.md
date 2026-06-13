@@ -148,6 +148,6 @@ Invoke-AtomicTest T1057 -TestNumbers 5 -Cleanup
 
 ---
 
-## 8. Analyst Notes
+## 8. Takeaway
 
 The `cmd.exe → WMIC.exe` chain is functionally similar to Test 2's `cmd.exe → tasklist.exe` chain, both are legacy / old CLI tools spawned via cmd. The recurring `AppData\Local\Temp` CurrentDirectory across Tests 3 and 5 suggests this could be a useful pivot point for a broader detection rule: flagging *any* process creation where CurrentDirectory is AppData\Local\Temp AND the CommandLine contains discovery-related keywords such `process`, `tasklist`, `Get-`, `wmic`, regardless of which specific binary is used.
