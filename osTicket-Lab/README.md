@@ -32,11 +32,11 @@ Once both containers were running and the database initialized successfully, osT
 
 **Admin Side:**
 
-![images/admin_view.png](admin_view.png)
+![admin-view](images/admin_view.png)
 
 **Client Side:**
 
-![images/user_view.png](user_view.png)
+![user-view](images/user_view.png)
 
 ---
 
@@ -69,11 +69,11 @@ Added custom fields to the Ticket Details form so every ticket captures the info
 
 **Topic Config:**
 
-![images/topic_config.png](topic_config.png)
+![topic-config](images/topic_config.png)
 
 **Form Config:**
 
-![images/form_config.png](form_config.png)
+![form-config](images/form_config.png)
 
 ---
 
