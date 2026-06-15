@@ -3,7 +3,7 @@
 Simulating MITRE ATT&CK techniques, hunting for evidence 
 in Splunk, and building detection rules from scratch.
 
----
+
 
 ## Environment
 
