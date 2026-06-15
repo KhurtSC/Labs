@@ -71,7 +71,7 @@ Added custom fields to the Ticket Details form so every ticket captures the info
 
 ![topic-config](images/topic_config.png)
 
-**Form Config:**
+**Field Config:**
 
 ![form-config](images/form_config.png)
 
