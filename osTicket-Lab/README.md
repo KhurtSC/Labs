@@ -90,3 +90,19 @@ osTicket (case / ticket making)
         ↓
 Tier 2 (if True Positive)
 ```
+
+---
+
+## Additional Images
+
+**Registering a Client**
+
+![registering-user](images/registering_user.png)
+
+**Drafting a Ticket (Client)**
+
+![drafting-ticket](images/drafting_ticket.png)
+
+**Ticket Received**
+
+![ticket-received](images/ticket_received.png)
