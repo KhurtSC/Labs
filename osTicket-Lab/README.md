@@ -42,7 +42,7 @@ Once both containers were running and the database initialized successfully, osT
 
 ## SOC Configuration
 
-Out of the box, osTicket is a generic helpdesk tool. The goal here was to make it feel like a SOC incident management system, not a customer support portal.
+By default, osTicket is a normal helpdesk tool. The goal here was to make it feel like a SOC incident management system, not a customer support portal.
 
 ### Help Topics Created
 
