@@ -1,4 +1,4 @@
-# osTicket Writeup
+# osTicket Setup for SOC
 
 ## Overview
 
