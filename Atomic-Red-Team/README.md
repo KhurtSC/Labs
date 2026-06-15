@@ -15,7 +15,7 @@ in Splunk, and building detection rules from scratch.
 | **Telemetry** | Sysmon + Splunk Universal Forwarder |
 | **Attack framework** | Invoke-AtomicRedTeam |
 
----
+
 
 ## Techniques Covered
 
