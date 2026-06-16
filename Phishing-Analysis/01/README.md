@@ -21,7 +21,7 @@ Date: 06/14/2026
 | Alert Date | May 13, 2024, 09:22 AM |
 | Device Action | Allowed |
 
-![details.png](details.png)
+![details.png](images/details.png)
 
 ## Analysis
 
@@ -43,17 +43,17 @@ To handle the attachment safely, I spun up an isolated VM, grabbed the actual do
 
 Running `md5sum` on the binary gave a hash of `961d8e0f1ec3c196499bfcbd0a9d19fa`. I submitted this to VirusTotal, which flagged the file as malicious with 61 of 71 vendors detecting it, tagging it under the popular threat label `trojan.asyncrat/msil` and categorizing it as a trojan/downloader.
 
-![virustotal.png](virustotal.png)
+![virustotal.png](images/virustotal.png)
 
 ### Phase 3: Behavioral Analysis
 
 To confirm what the binary actually does, I detonated it in AnyRun. The sandbox flagged the process with a maximum risk score of 100/100 and identified AsyncRAT, a Remote Access Trojan, via both YARA signature and mutex detection.
 
-![anyrun.png](anyrun.png)
+![anyrun.png](images/anyrun.png)
 
 The sandbox also mapped two MITRE ATT&CK techniques tied to reconnaissance behavior: T1012 (Query Registry), where the sample read the machine GUID, computer name, and checked supported languages from the registry, and T1082 (System Information Discovery), which covered the same set of actions from a discovery standpoint.
 
-![anyrun-2.png](anyrun-2.png)
+![anyrun-2.png](images/anyrun-2.png)
 
 ### Phase 4: Network Traffic Review
 
@@ -71,7 +71,7 @@ I'd also flag this part as likely out of scope for the alert itself. None of the
 | Analyze URL/Attachment | Malicious |
 | Is this alert True Positive or False Positive? | True Positive |
 
-![playbook-answer-2.png](playbook-answer-2.png)
+![playbook-answer-2.png](images/playbook-answer-2.png)
 
 **Alert Note:** Phishing Email Detected and Malware Analyzed.
 
