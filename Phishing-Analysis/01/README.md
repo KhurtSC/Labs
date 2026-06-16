@@ -31,7 +31,7 @@ Starting from the SOC alert, I pulled the primary details of the email: the SMTP
 
 Opening the email content showed a "Free Coffee" promotion with a "Redeem Now" button and a line reading "Hurry, this offer expires soon!" at the bottom, a classic urgency tactic to pressure the recipient into clicking without thinking. The email also carried a password-protected attachment, `free-coffee.zip`.
 
-![email_content.png](email_content.png)
+![email_content.png](images/email_content.png)
 
 Before touching the attachment, I checked the artifacts I already had. The source IP `103[.]80[.]134[.]63` came back with a bad reputation on both Talos Intelligence and WHOIS. The sender domain `coffeeshooop[.]com` didn't return any hits on reputation tools, likely because it's a domain created specifically for this lab, but combined with the urgency and free-gift premise, the email was already behaving like a phishing lure.
 
@@ -39,7 +39,7 @@ Before touching the attachment, I checked the artifacts I already had. The sourc
 
 To handle the attachment safely, I spun up an isolated VM, grabbed the actual download link for the zip via browser DevTools, and downloaded/extracted it inside the VM rather than on the host. The archive was password protected (password: `infected`), and extracting it revealed a single executable, `Coffee.exe`.
 
-![cli.png](cli.png)
+![cli.png](images/cli.png)
 
 Running `md5sum` on the binary gave a hash of `961d8e0f1ec3c196499bfcbd0a9d19fa`. I submitted this to VirusTotal, which flagged the file as malicious with 61 of 71 vendors detecting it, tagging it under the popular threat label `trojan.asyncrat/msil` and categorizing it as a trojan/downloader.
 
