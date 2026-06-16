@@ -27,13 +27,13 @@ Date: 06/14/2026
 
 ### Phase 1: Email Triage
 
-Starting from the SOC alert, I pulled the primary details of the email: the SMTP/source IP `103[.]80[.]134[.]63`, the sender `free@coffeeshooop.com`, the recipient `Felix@letsdefend.io`, and the subject line "Free Coffee Voucher."
+Starting from the SOC alert, I pulled the primary details of the email: the SMTP/source IP `103[.]80[.]134[.]63`, the sender `free@coffeeshooop[.]com`, the recipient `Felix@letsdefend.io`, and the subject line "Free Coffee Voucher."
 
 Opening the email content showed a "Free Coffee" promotion with a "Redeem Now" button and a line reading "Hurry, this offer expires soon!" at the bottom, a classic urgency tactic to pressure the recipient into clicking without thinking. The email also carried a password-protected attachment, `free-coffee.zip`.
 
 ![email_content.png](email_content.png)
 
-Before touching the attachment, I checked the artifacts I already had. The source IP `103.80.134.63` came back with a bad reputation on both Talos Intelligence and WHOIS. The sender domain `coffeeshooop.com` didn't return any hits on reputation tools, likely because it's a domain created specifically for this lab, but combined with the urgency and free-gift premise, the email was already behaving like a phishing lure.
+Before touching the attachment, I checked the artifacts I already had. The source IP `103[.]80[.]134[.]63` came back with a bad reputation on both Talos Intelligence and WHOIS. The sender domain `coffeeshooop[.]com` didn't return any hits on reputation tools, likely because it's a domain created specifically for this lab, but combined with the urgency and free-gift premise, the email was already behaving like a phishing lure.
 
 ### Phase 2: Attachment Analysis
 
@@ -82,7 +82,7 @@ Intelligence resulted a bad reputation for the said IP address. As for the conte
 
 | **Indicator** | **Type** | **Description / Context** |
 | --- | --- | --- |
-| `103.80.134[.]63` | IPv4 | Sender SMTP IP, flagged on Talos & WHOIS |
+| `103[.]80[.]134[.]63` | IPv4 | Sender SMTP IP, flagged on Talos & WHOIS |
 | `free@coffeeshooop[.]com` | Email Address | Phishing sender address |
 | `free-coffee.zip` | File Name | Password-protected malicious attachment (password: `infected`) |
 | `Coffee.exe` | File Name | Dropped AsyncRAT payload |
