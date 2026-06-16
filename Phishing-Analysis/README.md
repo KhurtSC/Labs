@@ -1,6 +1,4 @@
-## Phishing Analysis Lab
-
----
+# Phishing Analysis Lab
 
 Welcome to my phishing analysis repository, a hands-on lab designed to build pattern recognition and muscle memory by analyzing real-world phishing emails from a personal honeypot to develop the fast, intuitive triage skills required of a security analyst.
 
