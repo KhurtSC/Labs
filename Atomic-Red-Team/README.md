@@ -1,7 +1,7 @@
 # Atomic Red Team Home Lab
 
 In this lab I am simulating MITRE ATT&CK techniques, hunting for evidence 
-in Splunk, and building detection rules from scratch to improve further the skills.
+in Splunk, and building detection rules from scratch to improve further my skills.
 
 
 
