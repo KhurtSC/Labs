@@ -8,7 +8,7 @@ Welcome to my phishing analysis repository, a hands-on lab designed to build pat
 - **Standardized Analysis:** Apply a consistent, repeatable template to every email to ensure thorough and efficient investigations.
 - **Attachment Deep-Dives:** Safely extract and investigate malicious payloads (PDFs, macros, executables) to progressively build malware analysis skills.
 
-## Repository Structure
+## Repository Structure (will be applied if certain number of writeups are done)
 
 - **`in-front/`** – Deep dives and complex findings.
 - **`archive/`** – Other analyses made.
