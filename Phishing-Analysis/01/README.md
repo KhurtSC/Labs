@@ -57,9 +57,7 @@ The sandbox also mapped two MITRE ATT&CK techniques tied to reconnaissance behav
 
 ### Phase 4: Network Traffic Review
 
-Looking at AnyRun's HTTP/DNS activity for the sample, I saw outbound connections toward hosts geolocated in the United States and the Netherlands. I'm intentionally leaving the specific IPs and domains out of the IOC list below: the DNS resolutions looked clean and nothing in the request/response content pointed to an active C2 channel, so I didn't consider them confirmed indicators for this writeup.
-
-I'd also flag this part as likely out of scope for the alert itself. None of the playbook questions for SOC282 ask for C2 infrastructure, only delivery status, attachment verdict, and true/false positive, so this traffic wasn't needed to close the case. AsyncRAT samples in sandboxes can also generate background connections that are just sandbox or OS telemetry noise rather than real C2, and without any malicious content in the requests/responses, I'd rather not report those IPs as confirmed indicators.
+AnyRun recorded outbound connections to hosts in the United States and the Netherlands, but DNS resolutions were clean and the request/response content showed no active C2 activity. These are likely sandbox or OS telemetry noise common in AsyncRAT detonations, so they were excluded from the IOC list as unconfirmed indicators.
 
 ## Playbook & Alert Answers
 
