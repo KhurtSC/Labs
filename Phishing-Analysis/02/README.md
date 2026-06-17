@@ -35,7 +35,7 @@ I started by pulling the primary artifacts from the email headers. The display n
 
 The email content impersonated a Microsoft security alert, warning the recipient of unusual sign-in activity from Russia/Moscow, IP address `103[.]225[.]77[.]255`, on a Windows 10 device using Firefox. It presented a "Report The User" button, which is a social engineering tactic designed to provoke an immediate, emotional response from the recipient by making them feel their account is under threat.
 
-![email-contents.png](email-contents.png)
+![email-contents.png](images/email-contents.png)
 
 There were no attachments in this email. The malicious infrastructure was embedded directly within the HTML body.
 
@@ -65,9 +65,9 @@ It is worth noting that a clean SPF result does not guarantee legitimacy. If a t
 
 Running `89[.]144[.]44[.]2` through VirusTotal returned a clean verdict from all 91 vendors, though the platform noted 2 detected files communicating with this address. The clean IP reputation is likely a result of the sample's age - this email is from September 2023 - and the IP may have rotated or aged out of active threat feeds since then.
 
-![received-header.png](received-header.png)
+![received-header.png](images/received-header.png)
 
-![virustotal-ip.png](virustotal-ip.png)
+![virustotal-ip.png](images/virustotal-ip.png)
 
 ---
 
@@ -88,7 +88,7 @@ This is a tracking pixel - a 1×1 invisible image that fires an HTTP GET request
 
 Running `thebandalisty[.]com` through VirusTotal flagged it as malicious by 11 of 91 vendors, with detections spanning multiple vendors categorizing it as phishing and malicious.
 
-![virustotal-domain.png](virustotal-domain.png)
+![virustotal-domain.png](images/virustotal-domain.png)
 
 **Bayesian Poisoning**
 
@@ -100,7 +100,7 @@ The HTML also contained a large block of randomized, comma-separated words injec
 
 This technique, known as Bayesian poisoning, floods the email with statistically normal-looking text to manipulate the token frequency models used by spam filters and ML-based detection engines. By inflating the word count with innocuous terms, the attacker skews the content fingerprint of the email away from known phishing patterns, improving its chances of bypassing automated filtering.
 
-![bayesian-poisoing.png](bayesian-poisoing.png)
+![bayesian-poisoing.png](images/bayesian-poisoing.png)
 
 ---
 
