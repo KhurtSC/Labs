@@ -1,18 +1,12 @@
 # Phishing Analysis Lab
 
-Welcome to my phishing analysis repository, a hands-on lab designed to build pattern recognition and muscle memory by analyzing real-world phishing emails from a personal honeypot to develop the fast, intuitive triage skills required of a security analyst.
+Welcome to my Phishing Analysis Lab. This repository serves as a hands-on, practical environment dedicated to enhancing my skills in threat identification, proper triage, and investigative methodologies. 
 
 ## Objectives
-
-- **High-Volume Triage:** Analyze a large quantity of emails to quickly spot anomalies in headers, spoofed senders, and obfuscated links.
-- **Standardized Analysis:** Apply a consistent, repeatable template to every email to ensure thorough and efficient investigations.
-- **Attachment Deep-Dives:** Safely extract and investigate malicious payloads (PDFs, macros, executables) to progressively build malware analysis skills.
-
-## Repository Structure (will be applied if certain number of writeups are done)
-
-- **`in-front/`** – Deep dives and complex findings.
-- **`archive/`** – Other analyses made.
+* **Practical Application:** Analyze real-world phishing samples to build applicable skills in threat detection, header analysis, and pattern recognition.
+* **Technical Expansion:** Safely extract and investigate malicious payloads to expand my technical capabilities, bridging the gap between email security and foundational malware analysis. 
 
 ## Growth and Feedback
+I am actively building my knowledge base and intentionally pushing myself to tackle increasingly complex threats. Because this is a live learning environment where I am constantly testing new techniques, some of my early attachment analyses or methodologies may contain minor errors. 
 
-I am actively building my foundational knowledge in malware/attachment analysis. Because I am pushing myself to learn, some early attachment analyses might contain minor mistakes. Feedback and corrections are highly encouraged, thank you very much!
+I am highly receptive to constructive feedback, technical corrections, and industry insights. I appreciate you taking the time to review my investigations!
