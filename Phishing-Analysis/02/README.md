@@ -1,5 +1,3 @@
-# 02-MS-Account-Spoofing
-
 # Microsoft Account Spoofing Phishing Analysis
 
 Title: Phishing Analysis: Microsoft Account Unusual Sign-in Activity
