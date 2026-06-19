@@ -1,6 +1,6 @@
 # 02-MS-Account-Spoofing
 
-# SOC - Microsoft Account Spoofing Phishing Analysis
+# Microsoft Account Spoofing Phishing Analysis
 
 Title: Phishing Analysis: Microsoft Account Unusual Sign-in Activity
 
