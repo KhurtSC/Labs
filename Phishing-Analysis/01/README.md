@@ -1,5 +1,3 @@
-# 01
-
 # SOC282 - Free Coffee Voucher Phishing (AsyncRAT)
 
 Title: SOC282 - Phishing Alert: Deceptive Mail Detected
