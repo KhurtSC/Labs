@@ -1,4 +1,4 @@
-# 02
+# 02-MS-Account-Spoofing
 
 # SOC - Microsoft Account Spoofing Phishing Analysis
 
