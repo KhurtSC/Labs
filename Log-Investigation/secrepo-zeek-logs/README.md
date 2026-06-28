@@ -20,7 +20,7 @@ index=main host=dionaea_honeypot_01
 | timechart span=1d count
 ```
 
-![time-chart.png](time-chart.png)
+![time-chart.png](images/time-chart.png)
 
 The chart immediately revealed a massive spike on **March 16**, accounting for nearly the entire 2-million-event dataset in a single day. With the timeframe isolated, I pivoted to identifying the loudest attackers.
 
@@ -32,7 +32,7 @@ index=main host=dionaea_honeypot_01
 | top limit=10 src_ip
 ```
 
-![top-10.png](top-10.png)
+![top-10.png](images/top-10.png)
 
 The results were clear. Four IP addresses stood out immediately, their request counts dwarfed every other entry on the board, with the top attacker generating millions of hits alone. These became my four primary suspects.
 
@@ -62,7 +62,7 @@ Here is what the triage revealed:
 
 ### 192.168.203.63 - DirBuster
 
-![first-sus.png](first-sus.png)
+![first-sus.png](images/first-sus.png)
 
 This one identified itself immediately. The user-agent field read `DirBuster-0.12 (http://www.owasp.org/index.php/Category:OWASP_DirBuster_Project)` - no ambiguity whatsoever. DirBuster is a directory and file brute-forcing tool developed under the OWASP project, designed to discover hidden paths on a web server by hammering it with thousands of guesses.
 
@@ -74,7 +74,7 @@ We can assume here that this is a Reconnaissance.
 
 ### 192.168.202.79 - Nmap + Nikto
 
-![second-sus.png](second-sus.png)
+![second-sus.png](images/second-sus.png)
 
 Two tools, both self-identifying. The user-agent clearly showed `Mozilla/5.0 (compatible; Nmap Scripting Engine; http://nmap.org/book/nse.html)` alongside `Mozilla/5.00 (Nikto/2.1.5) (Evasions:None)`.
 
@@ -86,7 +86,7 @@ The `(Evasions:None)` tag in the Nikto user-agent is particularly telling. It ma
 
 ### 192.168.202.102 - Stealth
 
-![third-sus-1.png](third-sus-1.png)
+![third-sus-1.png](images/third-sus-1.png)
 
 This is where things got interesting.
 
@@ -98,9 +98,9 @@ The other three suspects were doing recon. They were loud, they announced their 
 
 ### 192.168.202.110 - Nessus
 
-![fourth-sus-1.png](fourth-sus-1.png)
+![fourth-sus-1.png](images/fourth-sus-1.png)
 
-![fourth-sus-2.png](fourth-sus-2.png)
+![fourth-sus-2.png](images/fourth-sus-2.png)
 
 The first screenshot says there was, a wide variety of attack types including XSS attempts, SQL injection strings, command injection, and header manipulation. But the second screenshot confirmed the tool behind it all.
 
@@ -126,7 +126,7 @@ Three attack vectors stood out:
 
 ### Attack Vector 1: Joomla File Upload Exploitation
 
-![third-ip-attacking-1.png](third-ip-attacking-2.png)
+![third-ip-attacking-1.png](images/third-ip-attacking-2.png)
 
 ```
 /joomla12/plugins/editors/tinymce/jscripts/tiny_mce/plugins/tinybrowser/upload.php?type=file&folder=
@@ -140,7 +140,7 @@ A successful upload here would not just be a foothold, it would be a full door l
 
 ### Attack Vector 2: Local File Inclusion (LFI)
 
-![third-ip-attacking-2.png](third-ip-attacking-3.png)
+![third-ip-attacking-2.png](images/third-ip-attacking-3.png)
 
 ```
 /twg176/admin/index.php?lang=../../counter/_twg.log\x00
@@ -158,7 +158,7 @@ Generic LFI scanners typically go after common targets like `/etc/passwd`. This 
 
 ### Attack Vector 3: MantisBT Remote Code Execution
 
-![third-ip-attacking-3.png](third-ip-attacking-1.png)
+![third-ip-attacking-3.png](images/third-ip-attacking-1.png)
 
 ```
 /mantis/manage_proj_page.php?sort=']);error_reporting(0);print(_code_);exec(base64_decode($_SERVER[HTTP_CMD]));die;#
@@ -190,7 +190,7 @@ index=main host=dionaea_honeypot_01 "192.168.202.102" "mantis" 200
 
 To be absolutely certain, I followed up with a manual review of the raw logs.
 
-![102-deep-dive.png](102-deep-dive.png)
+![102-deep-dive.png](images/102-deep-dive.png)
 
 The manual check confirmed the query. Every single attempt from `.102` returned either a POST request with no success response or a `404 Not Found`. The targeted paths did not exist on the honeypot, and the exploit had nothing to latch onto.
 
